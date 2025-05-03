@@ -13,7 +13,7 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   final TextEditingController _cityController = TextEditingController(
-    text: 'Омск',
+    text: 'Omsk',
   );
   final WeatherService _weatherService = WeatherService();
 
@@ -37,8 +37,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   void initState() {
     super.initState();
-    _getWeather();
 
+    // تأكيد أن قيمة النص موجودة قبل التنفيذ
+    _cityController.text = 'Omsk';
+
+    // تأجيل التنفيذ حتى تكتمل واجهة build
+    Future.delayed(Duration.zero, _getWeather);
+
+    // تحديث كل ساعة
     _timer = Timer.periodic(const Duration(hours: 1), (timer) {
       _getWeather();
     });

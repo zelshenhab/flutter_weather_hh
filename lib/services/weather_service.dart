@@ -5,7 +5,7 @@ import '../models/weather_model.dart';
 
 class WeatherService {
   final String _apiKey =
-      '4c95503e7d51474b9e7181441250305'; // ← ضع مفتاح API الخاص بك هنا
+      '555d2124bf1249b8b26194449250305'; // ← ضع مفتاح API الخاص بك هنا
 
   Future<WeatherModel?> fetchWeather(String city) async {
     try {
