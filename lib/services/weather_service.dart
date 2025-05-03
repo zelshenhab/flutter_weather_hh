@@ -5,7 +5,7 @@ import '../models/weather_model.dart';
 
 class WeatherService {
   final String _apiKey =
-      '555d2124bf1249b8b26194449250305'; // ← استبدل بمفتاحك الحقيقي
+      '555d2124bf1249b8b26194449250305';
 
   Future<WeatherModel?> fetchWeather(String city) async {
     try {
@@ -30,7 +30,6 @@ class WeatherService {
     } catch (e) {
       print('Error fetching weather: $e');
 
-      // إعادة المحاولة مرة واحدة
       try {
         print('Retrying...');
         final Uri retryUrl = Uri.parse(

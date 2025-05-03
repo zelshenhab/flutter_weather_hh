@@ -20,20 +20,13 @@ class WeatherCard extends StatelessWidget {
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
-            Image.network(
-              weather.iconUrl,
-              width: 64,
-              height: 64,
-            ),
+            Image.network(weather.iconUrl, width: 64, height: 64),
             const SizedBox(height: 12),
             Text(
               '${weather.temperatureC} °C',
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
             ),
-            Text(
-              weather.condition,
-              style: const TextStyle(fontSize: 16),
-            ),
+            Text(weather.condition, style: const TextStyle(fontSize: 16)),
             const Divider(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -55,7 +48,7 @@ class WeatherCard extends StatelessWidget {
                   ],
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

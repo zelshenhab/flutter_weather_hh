@@ -38,13 +38,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
   void initState() {
     super.initState();
 
-    // تأكيد أن قيمة النص موجودة قبل التنفيذ
     _cityController.text = 'Omsk';
 
-    // تأجيل التنفيذ حتى تكتمل واجهة build
     Future.delayed(Duration.zero, _getWeather);
 
-    // تحديث كل ساعة
     _timer = Timer.periodic(const Duration(hours: 1), (timer) {
       _getWeather();
     });
